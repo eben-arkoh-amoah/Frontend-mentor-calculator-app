@@ -5,7 +5,7 @@
 
 <div align="center">
   <h3>
-    <a "https://www.figma.com/file/dpxDm66txBIjrxUTesVLXx/calculator-app-1">
+    <a href="https://www.figma.com/file/dpxDm66txBIjrxUTesVLXx/calculator-app-1">
       Designs
     </a>
     <span> |
