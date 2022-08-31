@@ -27,18 +27,18 @@
 
 ## Overview
 
-This is a single simple calculator application which can be used for calculation. it also
-allows the user to switcth between three color themes  
+This appliction  simple calculator which can be used for simple mathematical calculations. It also
+allows the user to switch between three color themes . 
 
 
 ## About the Project
 
-This is a project i was assigned to as part of my software devepment training prgram to challenge and give <br> me a hand-on practice on the theories i have learnt in javascript during the javascript phase of the training period.
+This is a  calculator application project I was assigned to build as part of my software devepment training prgram to challenge and give <br> me a hand-on practice on the theories I have learnt in javascript during the javascript phase of the training.
 
 ## Tasks
 
 - Prototype : consists well structured html styled with  css stylesheet which is user interactive<br>
-wuth the help of javascript.
+with the help of javascript.
 
 ## Built With
 
