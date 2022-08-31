@@ -67,3 +67,26 @@ let secondTheme = () => {
     root.style.setProperty("--answer-button", "#FF8A38")
   );
 };
+
+let thirdTheme = () => {
+  return (
+    root.style.setProperty("--body-background", "#17062A"),
+    root.style.setProperty("--main-color", "#FFE53D"),
+    root.style.setProperty("--switch-background", "#1E0936"),
+    root.style.setProperty("--switch-and-answer-bottons", "#00DED0"),
+    root.style.setProperty("--screen-background", "#1E0936"),
+    root.style.setProperty("--edit-buttons-color", "#FFFFFF"),
+    root.style.setProperty("--inputs-color", "#FFE53D"),
+    root.style.setProperty("--edit-buttons-background", "#56077C"),
+    root.style.setProperty("--keyboard-background", "#1E0936"),
+    root.style.setProperty("--switch-left-margin", "75%"),
+    root.style.setProperty("--inputs-box-shadow", "inset 0px -4px 0px #881C9E"),
+    root.style.setProperty("--answer-button-color", "#1A2327"),
+    root.style.setProperty("--keys-background", "#331C4D"),
+    root.style.setProperty("--edit-box-shadow", "inset 0px -4px 0px #BE15F4"),
+    root.style.setProperty("--answer-box-shadow", "inset 0px -4px 0px #6CF9F1"),
+    root.style.setProperty("--hover-edit-background", "#8631AF"),
+    root.style.setProperty("--hover-input-color", "#6C34AC"),
+    root.style.setProperty("--answer-button", "#93FFF8")
+  );
+};
