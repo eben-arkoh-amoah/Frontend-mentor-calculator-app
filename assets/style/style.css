@@ -255,4 +255,23 @@ body{
     width: 185px;
 }
 
+button:hover{
+cursor: pointer;
+}
+
+#theme:hover{
+   cursor: pointer;
+}
+
+.input-button:hover{
+    background-color: var(--hover-input-color);
+}
+
+.edit-inputs-buttons:hover{
+    background: var(--hover-edit-background);
+}
+
+#Answer:hover{
+background: var(--answer-button);
+}
 }
