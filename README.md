@@ -44,7 +44,7 @@ wuth the help of javascript.
 
 - [html](https://www.w3schools.com)
 - [css](https://css-tricks.com)
--[javascript](https://www.codecademy.com)
+- [javascript](https://www.codecademy.com)
 ## Author
 Name: Ebenezer Arkoh-Amoah
 
