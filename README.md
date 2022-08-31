@@ -5,7 +5,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://drive.google.com/file/d/1Zqv0lTvNami_aGnnDXcPf9HI4VzoimDF/view?usp=sharing">
+    <a href="[https://drive.google.com/file/d/1Zqv0lTvNami_aGnnDXcPf9HI4VzoimDF/view?usp=sharing](https://www.figma.com/file/dpxDm66txBIjrxUTesVLXx/calculator-app-1)">
       Designs
     </a>
     <span> |
