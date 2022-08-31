@@ -40,7 +40,7 @@ The application has two main interactive sections.<br> The first section allows 
 The second section consists of a screen which displays value(s) to a user and a keyboard with input keys where a user may do his computations.
 ## Tasks
 
-- Prototype : consists well structured html styled with  css stylesheet which is user interactive<br>
+- Prototype : consists of well structured html styled with  css stylesheet which is user interactive<br>
 with the help of javascript.
 
 ## Built With
