@@ -119,3 +119,47 @@ border-radius: 10px;
     padding: 15px;
     font-size: 30px;
 }
+
+#keboard-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    background: var(--keyboard-background);
+    border-radius: 10px; 
+    padding: 20px;
+}
+
+#keyboard{
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: "1fr 1fr 1fr 1fr"
+                                       ;
+    row-gap: 10px;  
+    column-gap: 10px;
+    padding: 5px;                                    
+    width: 100%;
+}
+
+#keyboard button{
+    width: 59px;
+    height: 65px;
+    text-align: center ;
+     cursor: pointer;
+     border-radius: 10px;
+}
+
+.input-button{
+    background: var(--keys-background);
+    box-shadow: var(--inputs-box-shadow);
+    color: var(--inputs-color);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.edit-inputs-buttons{
+    color: var(--edit-buttons-color);
+    font-size: 15px;
+    font-weight: bolder;
+    background: var( --edit-buttons-background);
+    box-shadow: var(--edit-box-shadow);
+}
