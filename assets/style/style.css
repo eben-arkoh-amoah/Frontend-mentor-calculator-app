@@ -218,4 +218,30 @@ body{
     height: 10px;
     width: 10px;
 }
+
+#switch{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+}
+
+#screen{
+    height: 75px; 
+}
+
+#keyboard button{
+    width: 85px;
+    height: 52px;
+}
+
+#keyboard{
+    margin: auto;
+    row-gap: 14px;  
+    column-gap: 17px;
+    padding-bottom: 12px;
+}
+
+#keyboard button{
+    font-size: 25px;
+}
 }
