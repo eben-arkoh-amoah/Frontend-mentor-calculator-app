@@ -187,3 +187,35 @@ border-radius: 10px;
      color: var(--answer-button-color);
      box-shadow: var(--answer-box-shadow);
 }
+
+@media screen and (min-width:700px) {
+    
+body{
+    padding: 5%;
+}
+
+    .wrapper{
+        width: 450px;
+    }
+
+    
+#theme-number{
+    column-gap: 14px;
+    padding-left: 60px;
+}
+
+#color-theme{
+    font-size: 9px;
+    height: 13px;
+}
+
+#color-theme-switch{
+    width: 45px;
+}
+
+#switch{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+}
+}
