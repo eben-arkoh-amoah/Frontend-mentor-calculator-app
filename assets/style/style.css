@@ -163,3 +163,27 @@ border-radius: 10px;
     background: var( --edit-buttons-background);
     box-shadow: var(--edit-box-shadow);
 }
+
+
+.answer-and-reset{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding-right: 6px;
+}
+
+.answer-and-reset button{
+    cursor: pointer;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    width: 132px;
+}
+
+
+#Answer{
+    background: var(--switch-and-answer-bottons);
+     color: var(--answer-button-color);
+     box-shadow: var(--answer-box-shadow);
+}
