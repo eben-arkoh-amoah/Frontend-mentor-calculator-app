@@ -33,7 +33,7 @@ allows the user to switcth between three color themes
 
 ## About the Project
 
-This is a project i was assigned to as part of my software devepment training prgram to challenge and give <br> me a hand-on practice on the theories i have learnt in javascript during the javascript phase of the training period.
+This is a project I was assigned to as part of my software devepment training prgram to challenge and give <br> me a hand-on practice on the theories I have learnt in javascript during the javascript phase of the training period.
 
 ## Tasks
 
