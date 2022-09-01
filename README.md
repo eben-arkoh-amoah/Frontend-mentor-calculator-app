@@ -27,7 +27,7 @@
 
 ## Overview
 
-This appliction is simple calculator which can be used for simple mathematical calculations. It also
+This appliction is a simple calculator which can be used for simple mathematical calculations. It also
 allows the user to switch between three color themes . 
 
 
