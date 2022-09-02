@@ -3,7 +3,7 @@ const inputResult = () => {
   let lastIndex = screenInputs[screenInputs.length - 1];
   if (
     lastIndex == "+" ||
-    lastIndex == "+" ||
+    lastIndex == "-" ||
     lastIndex == "*" ||
     lastIndex == "/" ||
     lastIndex == "."
@@ -21,13 +21,17 @@ const resetInputs = () => {
 };
 
 function displayNumbers(value) {
+  let screenInputs = document.getElementById("answer").value;
+  let firstIndex = screenInputs[0];
   if (
-    document.getElementById("answer").value == "undefine" ||
+    document.getElementById("answer").value == "undefined" ||
     document.getElementById("answer").value == "SyntaxError" ||
     document.getElementById("answer").value == "+" ||
     document.getElementById("answer").value == "-" ||
     document.getElementById("answer").value == "/" ||
-    document.getElementById("answer").value == "*"
+    document.getElementById("answer").value == "*" ||
+    firstIndex == "u" ||
+    firstIndex == "S"
   ) {
     return (document.getElementById("answer").value = value);
   } else {
@@ -37,6 +41,7 @@ function displayNumbers(value) {
 
 const operatorInput = (value) => {
   let btn = document.getElementById("answer").value;
+   let firstIndex = btn[0];
   let lastIndex = btn[btn.length - 1];
   if (
     lastIndex == "+" ||
@@ -48,6 +53,8 @@ const operatorInput = (value) => {
     btn.pop();
     btn = btn.join("");
     return (btn = document.getElementById("answer").value = btn + value);
+  } else if (firstIndex == "u" || firstIndex == "S" || btn == " ") {
+    return (document.getElementById("answer").value = "SyntaxError");
   } else {
     return (document.getElementById("answer").value = btn + value);
   }
