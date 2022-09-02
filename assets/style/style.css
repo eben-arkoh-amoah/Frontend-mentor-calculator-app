@@ -34,9 +34,8 @@
 
 body{
 
-    background: var(--body-background); 
-    justify-content: center;
-    padding: 10%;
+    background: var(--body-background);
+    padding: 2%;
 }
 
 .wrapper{
