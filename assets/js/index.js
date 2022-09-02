@@ -53,6 +53,19 @@ const operatorInput = (value) => {
   }
 };
 
+const fullStopInput = (value) => {
+  let btn = document.getElementById("answer").value;
+  let lastIndex = btn[btn.length - 1];
+  if (lastIndex == ".") {
+    btn = btn.split("");
+    btn.pop();
+    btn = btn.join("");
+    return (btn = document.getElementById("answer").value = btn + value);
+  } else {
+    return (document.getElementById("answer").value = btn + value);
+  }
+};
+
 const deleteInput = () => {
   let btn = document.getElementById("answer").value;
   btn = btn.split("");
