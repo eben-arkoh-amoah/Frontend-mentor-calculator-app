@@ -25,7 +25,7 @@ function displayNumbers(value) {
   if (
     firstUserInput == "/" ||
     firstUserInput == "*" ||
-    firstUserInput == "3" ||
+    firstUserInput == "u" ||
     firstUserInput == "S"
   ) {
     return (document.getElementById("answer").value = value);
