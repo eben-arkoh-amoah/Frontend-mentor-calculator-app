@@ -1,19 +1,20 @@
+let userInputs = document.getElementById("answer").value;
+let lastIndex = userInputs[userInputs.length - 1];
+let firstIndex = userInputs[0];
+
 const inputResult = () => {
-  let screenInputs = document.getElementById("answer").value;
-  let lastIndex = screenInputs[screenInputs.length - 1];
-  if (
-    lastIndex == "+" ||
-    lastIndex == "-" ||
-    lastIndex == "*" ||
-    lastIndex == "/" ||
-    lastIndex == "."
-  ) {
-    return (document.getElementById("answer").value = "SyntaxError");
-  } else {
-    return (document.getElementById("answer").value = eval(
-      document.getElementById("answer").value
-    ));
-  }
+if (
+  lastIndex == "*" ||
+  lastIndex == "+" ||
+  lastIndex == "-" ||
+  lastIndex == "/"
+) {
+  return (document.getElementById("answer").value = "SyntaxError");
+} else {
+  return (document.getElementById("answer").value = eval(
+    document.getElementById("answer").value
+  ));
+}
 };
 
 const resetInputs = () => {
@@ -21,17 +22,9 @@ const resetInputs = () => {
 };
 
 function displayNumbers(value) {
-  let screenInputs = document.getElementById("answer").value;
-  let firstIndex = screenInputs[0];
   if (
-    document.getElementById("answer").value == "undefined" ||
-    document.getElementById("answer").value == "SyntaxError" ||
-    document.getElementById("answer").value == "+" ||
-    document.getElementById("answer").value == "-" ||
-    document.getElementById("answer").value == "/" ||
-    document.getElementById("answer").value == "*" ||
     firstIndex == "u" ||
-    firstIndex == "S"
+    firstIndex == "S" 
   ) {
     return (document.getElementById("answer").value = value);
   } else {
@@ -39,10 +32,8 @@ function displayNumbers(value) {
   }
 };
 
+
 const operatorInput = (value) => {
-  let btn = document.getElementById("answer").value;
-   let firstIndex = btn[0];
-  let lastIndex = btn[btn.length - 1];
   if (
     lastIndex == "+" ||
     lastIndex == "*" ||
@@ -51,34 +42,38 @@ const operatorInput = (value) => {
   ) {
     btn = btn.split("");
     btn.pop();
-    btn = btn.join("");
-    return (btn = document.getElementById("answer").value = btn + value);
-  } else if (firstIndex == "u" || firstIndex == "S" || btn == " ") {
-    return (document.getElementById("answer").value = "SyntaxError");
-  } else {
-    return (document.getElementById("answer").value = btn + value);
+    userInputs = userInputs.join("");
+    return (btn = document.getElementById("answer").value = userInputs + value);
+  }
+  else if (
+    firstIndex == "u" ||
+    firstIndex == "S" 
+  ) {
+    return (document.getElementById("answer").value = value);
+  }
+  else {
+    return (document.getElementById("answer").value = userInputs + value);
   }
 };
 
+
 const fullStopInput = (value) => {
-  let btn = document.getElementById("answer").value;
-  let lastIndex = btn[btn.length - 1];
   if (lastIndex == ".") {
-    btn = btn.split("");
-    btn.pop();
-    btn = btn.join("");
-    return (btn = document.getElementById("answer").value = btn + value);
+    userInputs = userInputs.split("");
+    userInputs.pop();
+    userInputs = btn.join("");
+    return ( document.getElementById("answer").value = userInputs + value);
   } else {
-    return (document.getElementById("answer").value = btn + value);
+    return (document.getElementById("answer").value = userInputs + value);
   }
 };
 
 const deleteInput = () => {
   let btn = document.getElementById("answer").value;
-  btn = btn.split("");
-  btn[btn.length - 1] = "";
-  btn = btn.join("");
-  return (document.getElementById("answer").value = btn);
+  userInputs = userInputs.split("");
+  userInputs[userInputs.length - 1] = "";
+ userInputs = userInputs.join("");
+  return (document.getElementById("answer").value = userInputs);
 };
 
 let root = document.querySelector(":root");
