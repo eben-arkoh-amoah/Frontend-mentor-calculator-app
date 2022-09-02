@@ -1,7 +1,19 @@
 const inputResult = () => {
-  return (document.getElementById("answer").value = eval(
-    document.getElementById("answer").value
-  ));
+  let screenInputs = document.getElementById("answer").value;
+  let lastIndex = screenInputs[screenInputs.length - 1];
+  if (
+    lastIndex == "+" ||
+    lastIndex == "+" ||
+    lastIndex == "*" ||
+    lastIndex == "/" ||
+    lastIndex == "."
+  ) {
+    return (document.getElementById("answer").value = "SyntaxError");
+  } else {
+    return (document.getElementById("answer").value = eval(
+      document.getElementById("answer").value
+    ));
+  }
 };
 
 const resetInputs = () => {
