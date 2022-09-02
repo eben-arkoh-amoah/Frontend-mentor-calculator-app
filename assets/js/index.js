@@ -20,9 +20,20 @@ const resetInputs = () => {
   return (document.getElementById("answer").value = " ");
 };
 
-function display(value) {
-  document.getElementById("answer").value += value;
-}
+function displayNumbers(value) {
+  if (
+    document.getElementById("answer").value == "undefine" ||
+    document.getElementById("answer").value == "SyntaxError" ||
+    document.getElementById("answer").value == "+" ||
+    document.getElementById("answer").value == "-" ||
+    document.getElementById("answer").value == "/" ||
+    document.getElementById("answer").value == "*"
+  ) {
+    return (document.getElementById("answer").value = value);
+  } else {
+    return (document.getElementById("answer").value += value);
+  }
+};
 
 const deleteInput = () => {
   let btn = document.getElementById("answer").value;
