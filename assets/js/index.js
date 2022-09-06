@@ -1,5 +1,7 @@
 const inputResult = () => {
   let userInputs = document.getElementById("answer").value;
+  let calculationResults = eval(document.getElementById("answer").value);
+  calculationResults = +calculationResults;
   let previousUserInput = userInputs[userInputs.length - 1];
   if (
     previousUserInput == "+" ||
@@ -8,10 +10,10 @@ const inputResult = () => {
     previousUserInput == "/"
   ) {
     return (document.getElementById("answer").value = "SyntaxError");
-  } else {
-    return (document.getElementById("answer").value = eval(
-      document.getElementById("answer").value
-    ));
+  }
+  else {
+    return (document.getElementById("answer").value = calculationResults.toLocaleString("en")
+    );
   }
 };
 
@@ -25,7 +27,7 @@ function displayNumbers(value) {
   if (
     firstUserInput == "/" ||
     firstUserInput == "*" ||
-    firstUserInput == "u" ||
+    firstUserInput == "N" ||
     firstUserInput == "S"
   ) {
     return (document.getElementById("answer").value = value);
