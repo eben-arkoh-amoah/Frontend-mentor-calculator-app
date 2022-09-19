@@ -1,7 +1,5 @@
 const inputResult = () => {
   let userInputs = document.getElementById("answer").value;
-  let calculationResults = eval(document.getElementById("answer").value);
-  calculationResults = +calculationResults;
   let previousUserInput = userInputs[userInputs.length - 1];
   if (
     previousUserInput == "+" ||
@@ -10,10 +8,10 @@ const inputResult = () => {
     previousUserInput == "/"
   ) {
     return (document.getElementById("answer").value = "SyntaxError");
-  }
-  else {
-    return (document.getElementById("answer").value = calculationResults.toLocaleString("en")
-    );
+  } else {
+    return (document.getElementById("answer").value = parseInt(eval(
+      document.getElementById("answer").value
+    )).toLocaleString("en"));
   }
 };
 
@@ -21,19 +19,25 @@ const resetInputs = () => {
   return (document.getElementById("answer").value = " ");
 };
 
+
 function displayNumbers(value) {
   let userInputs = document.getElementById("answer").value;
   let firstUserInput = userInputs[0];
   if (
     firstUserInput == "/" ||
     firstUserInput == "*" ||
-    firstUserInput == "N" ||
+    firstUserInput == "u" ||
     firstUserInput == "S"
   ) {
     return (document.getElementById("answer").value = value);
   } else {
     return (document.getElementById("answer").value += value);
   }
+}
+
+function createFocus() {
+  return document.getElementById("answer").focus();
+  
 }
 
 const deleteInput = () => {
