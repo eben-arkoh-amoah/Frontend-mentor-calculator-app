@@ -111,9 +111,6 @@ background: var(--screen-background);
 border-radius: 10px;
 }
 
-#answer{
-}
-
 #left-box{
     position: absolute;
     left: 10px;
