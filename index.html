@@ -1,82 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="assets/style/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
-
 <body>
-  <div class="wrapper">
-    <div class="header">
-      <header>
-        <div class="brand">
-          <b> calc</b>
-        </div>
-        <div id="theme">
-          <div id="theme-number">
-            <span id="1" onclick="defaultTheme()">1</span>
-            <span id="2" onclick="secondTheme()">2</span>
-            <span id="3" onclick="thirdTheme()">3</span>
-          </div>
-          <div id="color-theme">
-            <div id="theme-text">THEME</div>
-            <div id="color-theme-switch">
-              <div id="switch"></div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
+    <div class="wrapper">
+<div class="header">
+            <header>
+                <div class="brand">
+                   <b> calc</b>
+                </div>
+                <div id="theme">
+                  <div id="theme-number">
+                   <span id="first-theme">1</span>
+                  <span id="second-theme">2</span>
+                  <span id="third-theme">3</span>
+                </div>
+                  <div id="color-theme">
+                    <div id="theme-text">THEME</div>
+                    <div id="color-theme-switch">
+                      <div id="switch"></div>
+                    </div>
+                  </div>
+                </div>
+            </header>
+      </div>
 
-    <div class="main">
-      <main>
-        <section>
-          <div id="screen">
-            <input type="text" inputmode="numeric" id="answer" placeholder="0" readonly>
-          </div>
-        </section>
-        <section id="keboard-section">
-          <div id="keyboard">
-            <button class="input-button" onclick="displayNumbers('7')  ; createFocus()">7</button>
-            <button class="input-button" onclick="displayNumbers('8')  ; createFocus()">8</button>
-            <button class="input-button" onclick="displayNumbers('9')  ; createFocus()">9</button>
-            <button class="edit-inputs-buttons" onclick="deleteInput()">DEL</button>
-            <button class="input-button" onclick="displayNumbers('4') ; createFocus()">4</button>
-            <button class="input-button" onclick="displayNumbers('5') ; createFocus()">5</button>
-            <button class="input-button" onclick="displayNumbers('6') ; createFocus()">6</button>
-            <button class="input-button" onclick="operatorInput('+')">+</button>
-            <button class="input-button" onclick="displayNumbers('1') ; createFocus()">1</button>
-            <button class="input-button" onclick="displayNumbers('2') ; createFocus()">2</button>
-            <button class="input-button" onclick="displayNumbers('3') ; createFocus()">3</button>
-            <button class="input-button" onclick="operatorInput('-')">-</button>
-            <button class="input-button" onclick="fullStopInput('.')  ; createFocus()">.</button>
-            <button class="input-button" onclick="displayNumbers('0')  ; createFocus()">0</button>
-            <button class="input-button" onclick="operatorInput('/')">/</button>
-            <button class="input-button" onclick="operatorInput('*')">x</button>
-          </div>
-          <div class="answer-and-reset">
-            <button type="reset" class="edit-inputs-buttons" id="reset" onclick="resetInputs()">RESET</button>
-            <button id="Answer" onclick="inputResult()"> = </button>
-          </div>
-        </section>
+      <div class="main">
+        <main>
+            <section>
+                  <div id="screen">
+                    <div id="left-box"></div>
+                  <input type="text" inputmode = "numeric" id = "answer" placeholder = "0" readonly>
+                </div>
+            </section>
+            <section id="keboard-section">
+                <div id="keyboard">
+               <button class="input-button" >7</button>
+               <button class="input-button" >8</button>
+               <button class="input-button" >9</button>
+               <button  id="delete"  class="edit-inputs-buttons">DEL</button>
+               <button class="input-button" >4</button>
+               <button class="input-button" >5</button>
+               <button class="input-button" >6</button>
+               <button class="input-button" >+</button>
+               <button class="input-button" >1</button>
+               <button class="input-button" >2</button>
+               <button class="input-button" >3</button>
+               <button class="input-button" >-</button>
+               <button class="input-button" >.</button>
+               <button class="input-button" >0</button>
+               <button class="input-button" >/</button>
+               <button class="input-button" >x</button>
+               </div>
+                <div  class="result-and-reset">
+                  <button type="reset" class="edit-inputs-buttons" id="reset" >RESET</button>
+               <button id="results"> = </button>
+               </div> 
+            </section>
 
-      </main>
-    </div>
+        </main>
+      </div>
 
-    <div class="footer">
-      <footer>
-        <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a href="#">Ebenezer Arkoh-Amoah</a>.
-        </div>
-      </footer>
-    </div>
+      <div class="footer">
+        <footer>
+            <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ebenezer Arkoh-Amoah</a>.
   </div>
-  <script src="assets/js/index.js"></script>
+        </footer>
+      </div>
+    </div>
+    <script src="assets/js/index.js"></script>
 </body>
-
 </html>
