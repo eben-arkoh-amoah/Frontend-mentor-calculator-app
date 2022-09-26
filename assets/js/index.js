@@ -13,7 +13,6 @@ let operand1 = "" ;
 let operand2 = "" ;
 let operator = "" ;
 
-
 function isDigit(value){
   return digits.includes(value)
 }
@@ -27,7 +26,7 @@ function processClick(e){
     operator = "*";
     return sign.innerText = "x";
 }
-  if (isOperator(value) && value !== "x") {
+  else if (isOperator(value) && value !== "x") {
     operator = value;
 return  sign.innerText = operator;
   }
@@ -41,14 +40,20 @@ return  sign.innerText = operator;
   }
 }
 
+String.prototype.convertString = function () {
+    return Number(this.replace(",", "")).toLocaleString("en-US");
+}
+
+console.log((12233.4).toLocaleString("en"));
+
+
 function convertInputToLocaleString() {
   let num = screen.value;
-  let convertedNum = Number(num.replace(",", "")).toLocaleString("en-US");
   if (num.includes(".")) {
-    return screen.value = convertedNum.replace(".",".");
+    return screen.value = (num.convertString()).replace(".",".");
   }
   else {
-    return screen.value = Number(num.replace(",","")).toLocaleString("en-US")
+    return screen.value = num.convertString();
   }
 }
 
@@ -62,22 +67,18 @@ function inputResult(){
   
 };
 
-function deleteInput(){
-  if (screen.value == operand1) {
+function deleteInput() {
+  if ((screen.value).replaceAll(",","") == operand1) {
     let lastDigit = operand1.charAt(operand1.length - 1);
-    operand1 = operand1.replace(lastDigit,""); 
-    return screen.value = operand1
+    operand1 = operand1.replace(lastDigit, ""); 
+    let result = operand1.convertString();
+    return screen.value = result;
   }
-  else if (screen.value == operand2){
-     let lastDigit = operand2.charAt(operand2.length - 1);;
-    operand2 = operand2.replace(lastDigit,""); 
-    return screen.value = operand2;
-  }
-  else if(operand1.charAt() == false){
-    operand1.toString();
-     let lastDigit = operand1.charAt(operand1.length - 1);
-    operand1 = operand1.replace(lastDigit,""); 
-    return screen.value = operand1
+  if ((screen.value).replaceAll(",","") == operand2) {
+    let lastDigit = operand1.charAt(operand2.length - 1);
+    operand1 = operand2.replace(lastDigit, ""); 
+    let result = operand2.convertString();
+    return screen.value = result;
   }
 }
 

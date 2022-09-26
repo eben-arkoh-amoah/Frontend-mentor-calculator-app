@@ -105,6 +105,8 @@ main{
 
 #screen{
     position: relative;
+    inline-size: max-content;
+   overflow-wrap: break-word;
     width: 100%;
     height: 65px; 
 background: var(--screen-background);
@@ -112,12 +114,12 @@ border-radius: 10px;
 }
 
 #left-box{
-    position: absolute;
-    left: 10px;
-    top: 20px;
-    font-size: 24px;
-    font-weight: bolder;
-color: white;
+position: absolute;
+left: 10px;
+top: 20px;
+font-size: 24px;
+font-weight: bolder;
+color: var(--main-color);
 }
 
 #screen input{
@@ -127,6 +129,8 @@ color: white;
     text-align: right;
     padding: 15px;
     font-size: 30px;
+      overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 #keboard-section{
