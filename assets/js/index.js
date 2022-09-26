@@ -11,7 +11,11 @@ let digits = [0,1,2,3,4,5,6,7,8,9,"."]
 let operators = ["=","x","/","+","-"]
 let operand1 = "" ;
 let operand2 = "" ;
-let operator = "" ;
+let operator = "";
+
+String.prototype.convertString = function () {
+    return Number(this.replace(",", "")).toLocaleString("en-US");
+}
 
 function isDigit(value){
   return digits.includes(value)
@@ -32,34 +36,21 @@ return  sign.innerText = operator;
   }
   else if(operator.length < 1){
     operand1 += value;
-    return screen.value = operand1;
+    let screenValue = operand1.convertString();
+    return screen.value = screenValue;
   }
   else {
     operand2 += value;
-    return screen.value = operand2;
+     let screenValue = operand2.convertString();
+    return screen.value = screenValue;
   }
 }
 
-String.prototype.convertString = function () {
-    return Number(this.replace(",", "")).toLocaleString("en-US");
-}
-
-console.log((12233.4).toLocaleString("en"));
-
-
-function convertInputToLocaleString() {
-  let num = screen.value;
-  if (num.includes(".")) {
-    return screen.value = (num.convertString()).replace(".",".");
-  }
-  else {
-    return screen.value = num.convertString();
-  }
-}
 
 function inputResult(){
   let result = eval(operand1 + operator + operand2);
   operand2 = ""
+  sign.innerText = "";
   operand1 = result;
   let num = operand1;
   let convertedNum = Number(num).toLocaleString("en-US");
@@ -71,14 +62,23 @@ function deleteInput() {
   if ((screen.value).replaceAll(",","") == operand1) {
     let lastDigit = operand1.charAt(operand1.length - 1);
     operand1 = operand1.replace(lastDigit, ""); 
+    console.log(operand1);
     let result = operand1.convertString();
+    console.log(typeof  operand1)
     return screen.value = result;
   }
   if ((screen.value).replaceAll(",","") == operand2) {
-    let lastDigit = operand1.charAt(operand2.length - 1);
-    operand1 = operand2.replace(lastDigit, ""); 
+    let lastDigit = operand2.charAt(operand2.length - 1);
+    operand2 = operand2.replace(lastDigit, ""); 
+    console.log(operand2);
     let result = operand2.convertString();
     return screen.value = result;
+  }
+  else if(operand1.charAt() == false){
+    operand1.toString();
+     let lastDigit = operand1.charAt(operand1.length - 1);
+    operand1 = operand1.replace(lastDigit,""); 
+    return screen.value = operand1
   }
 }
 
@@ -162,6 +162,7 @@ function thirdTheme(){
 };
 
 
+buttons.forEach(btn => btn.addEventListener("click", processClick));
 themeOne.addEventListener("click", defaultTheme);
 themeTwo.addEventListener("click", secondTheme);
 themeThree.addEventListener("click", thirdTheme);
@@ -169,7 +170,3 @@ deleteButton.addEventListener("click", deleteInput);
 resultButton.addEventListener("click", inputResult);
 clearButton.addEventListener("click", clearOperands);
 
-buttons.forEach(btn => btn.addEventListener("click", processClick))
-
-buttons.forEach( btn => btn.addEventListener("click", convertInputToLocaleString
-))
