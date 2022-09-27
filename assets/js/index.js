@@ -7,6 +7,7 @@ let themeThree = document.getElementById("third-theme");
 let buttons = document.querySelectorAll(".input-button")
 let screen = document.getElementById("answer") ;
 let sign = document.getElementById("left-box");
+let floater = document.getElementById("full-stop");
 let digits = [0,1,2,3,4,5,6,7,8,9,"."]
 let operators = ["=","x","/","+","-"]
 let operand1 = "" ;
@@ -26,10 +27,11 @@ function isOperator(value){
 
 function processClick(e){
   let value = e.target.innerText;
+  (screen).focus();
   if (isOperator(value) && value == "x") {
     operator = "*";
     return sign.innerText = "x";
-}
+  }
   else if (isOperator(value) && value !== "x") {
     operator = value;
 return  sign.innerText = operator;
@@ -46,20 +48,26 @@ return  sign.innerText = operator;
   }
 }
 
-
-function inputResult(){
+function inputResult() {
+  if (operand1 == "") {
+    return screen.value = "0";
+  }
+  else if (operand2 == "" && operator.length > 0) {
+    return screen.value = Number(operand1).toLocaleString("en");
+  }
+  else{
   let result = eval(operand1 + operator + operand2);
   operand2 = ""
   sign.innerText = "";
   operand1 = result;
   let num = operand1;
   let convertedNum = Number(num).toLocaleString("en-US");
-  return  screen.value = convertedNum;
+  return  screen.value = convertedNum;}
   
 };
 
 function deleteInput() {
-  if ((screen.value).replaceAll(",","") == operand1) {
+  if ((screen.value).replaceAll(",","") == operand1 || operator == "" ) {
     let lastDigit = operand1.charAt(operand1.length - 1);
     operand1 = operand1.replace(lastDigit, ""); 
     console.log(operand1);
@@ -67,19 +75,20 @@ function deleteInput() {
     console.log(typeof  operand1)
     return screen.value = result;
   }
-  if ((screen.value).replaceAll(",","") == operand2) {
+ else if ((screen.value).replaceAll(",","") == operand2) {
     let lastDigit = operand2.charAt(operand2.length - 1);
     operand2 = operand2.replace(lastDigit, ""); 
-    console.log(operand2);
     let result = operand2.convertString();
     return screen.value = result;
   }
-  else if(operand1.charAt() == false){
-    operand1.toString();
-     let lastDigit = operand1.charAt(operand1.length - 1);
-    operand1 = operand1.replace(lastDigit,""); 
-    return screen.value = operand1
-  }
+  // else if (operand2 == "" && operator == "") {
+  //    let lastDigit = operand1.charAt(operand1.length - 1);
+  //   operand1 = operand1.replace(lastDigit, ""); 
+  //   console.log(operand1);
+  //   let result = operand1.convertString();
+  //   console.log(typeof  operand1)
+  //   return screen.value = result;
+  // }
 }
 
 function clearOperands() {
@@ -169,4 +178,3 @@ themeThree.addEventListener("click", thirdTheme);
 deleteButton.addEventListener("click", deleteInput);
 resultButton.addEventListener("click", inputResult);
 clearButton.addEventListener("click", clearOperands);
-
