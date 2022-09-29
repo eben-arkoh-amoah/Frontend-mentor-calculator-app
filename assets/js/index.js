@@ -58,7 +58,7 @@ return  sign.innerText = operator;
 
 function checkLength() {
   if ((screen.value).length < 15) {
-    screen.style.fontSize = "45px";
+    screen.style.fontSize = "30px";
   }
  else if (((screen.value).length) === 15) {
     screen.style.fontSize = "22px";
