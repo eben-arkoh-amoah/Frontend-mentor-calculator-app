@@ -5,10 +5,9 @@ let themeOne = document.getElementById("first-theme");
 let themeTwo = document.getElementById("second-theme");
 let themeThree = document.getElementById("third-theme");
 let buttons = document.querySelectorAll(".input-button")
-let screen = document.getElementById("answer") ;
-let sign = document.getElementById("left-box");
-let operandOne = document.getElementById("first-operator");
-let floater = document.getElementById("full-stop");
+let screen = document.getElementById("input-screen") ;
+let sign = document.getElementById("operator-container");
+let operandOne = document.getElementById("first-operand");
 
 
 let digits = [0,1,2,3,4,5,6,7,8,9,"."]
@@ -51,7 +50,6 @@ return  sign.innerText = operator;
     return screen.value = screenValue;
   }
   else if ((operator.length == 1)) {
-    console.log(operand2.length);
     operand2 += value;
      let screenValue = operand2.convertString();
     return screen.value = screenValue;
@@ -60,19 +58,19 @@ return  sign.innerText = operator;
 
 function checkLength() {
   if ((screen.value).length < 15) {
-    screen.style.fontSize = "30px";
+    screen.style.fontSize = "45px";
   }
  else if (((screen.value).length) === 15) {
     screen.style.fontSize = "22px";
-    console.log("hello world")
   }
-  else if (((screen.value).length) === 20) {
+  else if (((screen.value).length) == 20) {
     screen.style.fontSize = "20px";
     operandOne.style.fontSize = "20px";
   }
-  else if (((screen.value).length) === 25) {
+  else if (((screen.value).length) >= 25) {
     screen.style.fontSize = "15px";
     operandOne.style.fontSize = "15px";
+    console.log("hello world");
   }
   else {
     return;
