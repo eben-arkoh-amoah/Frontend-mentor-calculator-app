@@ -7,13 +7,15 @@ let themeThree = document.getElementById("third-theme");
 let buttons = document.querySelectorAll(".input-button")
 let screen = document.getElementById("answer") ;
 let sign = document.getElementById("left-box");
+let operandOne = document.getElementById("first-operator");
 let floater = document.getElementById("full-stop");
+
+
 let digits = [0,1,2,3,4,5,6,7,8,9,"."]
 let operators = ["=","x","/","+","-"]
 let operand1 = "" ;
 let operand2 = "" ;
 let operator = "";
-
 String.prototype.convertString = function () {
     return Number(this.replace(",", "")).toLocaleString("en-US");
 }
@@ -27,40 +29,74 @@ function isOperator(value){
 
 function processClick(e){
   let value = e.target.innerText;
-  (screen).focus();
   if (isOperator(value) && value == "x") {
+    screen.style.paddingTop = "35px";
+    screen.placeholder = "";
+    screen.value = "";
+    operandOne.innerText = parseInt(operand1).toLocaleString("en");
     operator = "*";
     return sign.innerText = "x";
   }
   else if (isOperator(value) && value !== "x") {
+    screen.style.paddingTop = "35px";
+    screen.placeholder = "";
     operator = value;
+    screen.value = "";
+    operandOne.innerText = parseInt(operand1).toLocaleString("en");
 return  sign.innerText = operator;
   }
-  else if(operator.length < 1){
+  else if ((operator.length < 1)) {
     operand1 += value;
     let screenValue = operand1.convertString();
     return screen.value = screenValue;
   }
-  else {
+  else if ((operator.length == 1)) {
+    console.log(operand2.length);
     operand2 += value;
      let screenValue = operand2.convertString();
     return screen.value = screenValue;
   }
 }
 
+function checkLength() {
+  if ((screen.value).length < 15) {
+    screen.style.fontSize = "30px";
+  }
+ else if (((screen.value).length) === 15) {
+    screen.style.fontSize = "22px";
+    console.log("hello world")
+  }
+  else if (((screen.value).length) === 20) {
+    screen.style.fontSize = "20px";
+    operandOne.style.fontSize = "20px";
+  }
+  else if (((screen.value).length) === 25) {
+    screen.style.fontSize = "15px";
+    operandOne.style.fontSize = "15px";
+  }
+  else {
+    return;
+  }
+}
+
+
 function inputResult() {
+    screen.style.paddingTop = "15px";
   if (operand1 == "") {
     return screen.value = "0";
   }
   else if (operand2 == "" && operator.length > 0) {
+    operandOne.innerText = "";
     return screen.value = Number(operand1).toLocaleString("en");
   }
   else{
+    screen.style.paddingTop = "15px";
   let result = eval(operand1 + operator + operand2);
   operand2 = ""
-  sign.innerText = "";
+    sign.innerText = "";
+    operandOne.innerText = "";
   operand1 = result;
-  let num = operand1;
+    let num = operand1;
   let convertedNum = Number(num).toLocaleString("en-US");
   return  screen.value = convertedNum;}
   
@@ -75,26 +111,22 @@ function deleteInput() {
     console.log(typeof  operand1)
     return screen.value = result;
   }
- else if ((screen.value).replaceAll(",","") == operand2) {
+  else if ((screen.value).replaceAll(",", "") == operand2) {
     let lastDigit = operand2.charAt(operand2.length - 1);
     operand2 = operand2.replace(lastDigit, ""); 
     let result = operand2.convertString();
     return screen.value = result;
   }
-  // else if (operand2 == "" && operator == "") {
-  //    let lastDigit = operand1.charAt(operand1.length - 1);
-  //   operand1 = operand1.replace(lastDigit, ""); 
-  //   console.log(operand1);
-  //   let result = operand1.convertString();
-  //   console.log(typeof  operand1)
-  //   return screen.value = result;
-  // }
 }
 
 function clearOperands() {
+  screen.style.fontSize = "30px";
+  screen.style.paddingTop = "15px";
+    screen.placeholder = "0";
   operand2 = "";
   operand1 = "";
   operator = "";
+  operandOne.innerText = "";
   sign.innerText = "";
   return( screen.value = "");
 }
@@ -172,6 +204,7 @@ function thirdTheme(){
 
 
 buttons.forEach(btn => btn.addEventListener("click", processClick));
+buttons.forEach(btn => btn.addEventListener("click", checkLength));
 themeOne.addEventListener("click", defaultTheme);
 themeTwo.addEventListener("click", secondTheme);
 themeThree.addEventListener("click", thirdTheme);
