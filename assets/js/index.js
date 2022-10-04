@@ -27,6 +27,7 @@ function isOperator(value){
 }
 
 function processClick(e){
+    screen.focus();
   let value = e.target.innerText;
   if (isOperator(value) && value == "x") {
     screen.style.paddingTop = "35px";
